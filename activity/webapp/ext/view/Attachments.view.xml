@@ -1,0 +1,64 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns="sap.ui.table"
+	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="fsm.connector.activity.ext.controller.Attachments">
+	
+	<TreeTable
+	id="treeTable"
+	selectionMode="Single"
+	enableColumnReordering="false"
+	rows="{path:'Attachments>/nodeRoot', parameters: {arrayNames:['children']}}"
+	enableSelectAll="false"
+	>
+	 <columns>
+	     <Column id="ColumnDescription">
+		  <m:Label id="LabelDescription" text="Description"/>
+		  <template>
+			<m:Text id="TextDescription" text="{Attachments>Description}" wrapping="false" />
+		  </template>
+	    </Column>
+	    <Column id="ColumnFileName">
+		  <m:Label id="LabelFileName" text="File Name"/>
+		  <template>
+			<m:Text id="TextFileName" text="{Attachments>FileName}" wrapping="false" />
+		  </template>
+	    </Column>
+	    <Column id="ColumnCreatedBy">
+		  <m:Label id="LabelCreatedBy" text="Created By"/>
+		  <template>
+			<m:Text id="TextCreatedBy" text="{Attachments>CreatedBy}" wrapping="false" />
+		  </template>
+	    </Column>
+	    <Column id="ColumnCreatedOn">
+		  <m:Label id="LabelCreatedOn" text="Created On"/>
+		  <template>
+			<m:Text id="TextCreatedOn" text="{
+                        path:'Attachments>CreatedOn', type: 'sap.ui.model.type.Date'}"/>
+		  </template>
+	    </Column>
+	    <Column id="ColumnDokumentNumber">
+		<m:Label id="LabelDokumentNumber" text="Dokument Number"/>
+		<template>
+		    <m:Text id="TextDokumentNumber" text="{Attachments>DokumentNumber}" wrapping="false" />
+		</template>
+	  </Column>
+	  <Column id="ColumnDokumentVersion">
+		<m:Label id="LabelDokumentVersion" text="Dokument Version"/>
+		<template>
+		    <m:Text id="TextDokumentVersion" text="{Attachments>DokumentVersion}" wrapping="false" />
+		</template>
+	  </Column>
+	  <Column id="ColumnDokumentPart">
+		<m:Label id="LabelDokumentPart" text="Dokument Part"/>
+		<template>
+		    <m:Text id="TextDokumentPart" text="{Attachments>DokumentPart}" wrapping="false" />
+		</template>
+	  </Column>
+	  <Column id="ColumnDokumentType">
+		<m:Label id="LabelDokumentType" text="Dokument Type"/>
+		<template>
+		    <m:Text id="TextDokumentType" text="{Attachments>DokumentType}" wrapping="false" />
+		</template>
+	  </Column>
+	</columns>
+  </TreeTable>
+	
+</mvc:View>

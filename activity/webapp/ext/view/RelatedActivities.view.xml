@@ -1,0 +1,90 @@
+<mvc:View xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns="sap.ui.table"
+	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="fsm.connector.activity.ext.controller.RelatedActivities">
+
+	<TreeTable id="treeTableRelatedActivities" selectionMode="Single" enableColumnReordering="false" rows="{path:'RelatedActivities>/nodeRoot', parameters: {arrayNames:['children']}}" enableSelectAll="false">
+		<columns>
+			<Column id="ColumnRelActiDescription">
+				<m:Label id="LabelRelActiDescription" text="Description"/>
+				<template>
+					<m:Text id="TextRelActiDescription" text="{RelatedActivities>Description}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiActivityNumber">
+				<m:Label id="LabelRelActiActivityNumber" text="Activity Number"/>
+				<template>
+					<m:Text id="TextRelActiActivityNumber" text="{RelatedActivities>ActivityNumber}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiOrderNumber">
+				<m:Label id="LabelRelActiOrderNumber" text="Order Number"/>
+				<template>
+					<m:Text id="TextRelActiOrderNumber" text="{RelatedActivities>OrderNumber}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiOperationNumber">
+				<m:Label id="LabelRelActiOperationNumber" text="Operation Number"/>
+				<template>
+					<m:Text id="TextRelActiOperationNumber" text="{RelatedActivities>OperationNumber}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiActivityStatus">
+				<m:Label id="LabelRelActiActivityStatus" text="Activity Status"/>
+				<template>
+					<m:Text id="TextRelActiActivityStatus" text="{RelatedActivities>ActivityStatus}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiPerson">
+				<m:Label id="LabelRelActiPerson" text="Person"/>
+				<template>
+					<m:Text id="TextRelActiPerson" text="{RelatedActivities>Person}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiSubject">
+				<m:Label id="LabelRelActiSubject" text="Subject"/>
+				<template>
+					<m:Text id="TextRelActiSubject" text="{RelatedActivities>Subject}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiTechnician">
+				<m:Label id="LabelRelActiTechnician" text="Technician"/>
+				<template>
+					<m:Text id="TextRelActiTechnician" text="{RelatedActivities>Technician}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiActivityStartDate">
+				<m:Label id="LabelRelActiActivityStartDate" text="Activity Start Date"/>
+				<template>
+					<m:Text id="TextRelActiActivityStartDate" text="{RelatedActivities>ActivityStartDate}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiActivityStartTime">
+				<m:Label id="LabelRelActiActivityStartTime" text="Activity Start Time"/>
+				<template>
+					<m:Text id="TextRelActiActivityStartTime" text="{RelatedActivities>ActivityStartTime}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiActivityEndDate">
+				<m:Label id="LabelRelActiActivityEndDate" text="Activity End Date"/>
+				<template>
+					<m:Text id="TextRelActiActivityEndDate" text="{RelatedActivities>ActivityEndDate}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiActivityEndTime">
+				<m:Label id="LabelRelActiActivityEndTime" text="Activity End Time"/>
+				<template>
+					<m:Text id="TextRelActiActivityEndTime" text="{RelatedActivities>ActivityEndTime}" wrapping="false" />
+				</template>
+			</Column>
+			<Column id="ColumnRelActiSourceActivity">
+				<m:Label id="LabelRelActiSourceActivity" text="Source Activity"/>
+				<template>
+					<m:Text id="TextRelActiSourceActivity" text="{RelatedActivities>SourceActivity}" wrapping="false" />
+				</template>
+			</Column>
+		</columns>
+	</TreeTable>
+
+</mvc:View>
