@@ -4,87 +4,81 @@
 	xmlns="sap.ui.table"
 	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="fsm.connector.activity.ext.controller.RelatedActivities">
 
-	<TreeTable id="treeTableRelatedActivities" selectionMode="Single" enableColumnReordering="false" rows="{path:'RelatedActivities>/nodeRoot', parameters: {arrayNames:['children']}}" enableSelectAll="false">
+	<Table id="TableRelatedActivities" rows="{path:'toActivityRelated'}" enableSelectAll="false" rowMode='Auto' selectionMode="None" >
 		<columns>
-			<Column id="ColumnRelActiDescription">
-				<m:Label id="LabelRelActiDescription" text="Description"/>
-				<template>
-					<m:Text id="TextRelActiDescription" text="{RelatedActivities>Description}" wrapping="false" />
-				</template>
-			</Column>
 			<Column id="ColumnRelActiActivityNumber">
-				<m:Label id="LabelRelActiActivityNumber" text="Activity Number"/>
+				<m:Label id="LabelRelActiActivityNumber" text="{i18n>ActivityNumber}"/>
 				<template>
-					<m:Text id="TextRelActiActivityNumber" text="{RelatedActivities>ActivityNumber}" wrapping="false" />
+					<m:Text id="TextRelActiActivityNumber" text="{ActivityNumber}" wrapping="false" />
 				</template>
 			</Column>
 			<Column id="ColumnRelActiOrderNumber">
-				<m:Label id="LabelRelActiOrderNumber" text="Order Number"/>
+				<m:Label id="LabelRelActiOrderNumber" text="{i18n>OrderNumber}"/>
 				<template>
-					<m:Text id="TextRelActiOrderNumber" text="{RelatedActivities>OrderNumber}" wrapping="false" />
+					<m:Text id="TextRelActiOrderNumber" text="{OrderNumber}" wrapping="false" />
 				</template>
 			</Column>
 			<Column id="ColumnRelActiOperationNumber">
-				<m:Label id="LabelRelActiOperationNumber" text="Operation Number"/>
+				<m:Label id="LabelRelActiOperationNumber" text="{i18n>OperationNumber}"/>
 				<template>
-					<m:Text id="TextRelActiOperationNumber" text="{RelatedActivities>OperationNumber}" wrapping="false" />
+					<m:Text id="TextRelActiOperationNumber" text="{OperationNumber}" wrapping="false" />
 				</template>
 			</Column>
 			<Column id="ColumnRelActiActivityStatus">
-				<m:Label id="LabelRelActiActivityStatus" text="Activity Status"/>
+				<m:Label id="LabelRelActiActivityStatus" text="{i18n>ActivityStatus}"/>
 				<template>
-					<m:Text id="TextRelActiActivityStatus" text="{RelatedActivities>ActivityStatus}" wrapping="false" />
+					<m:Text id="TextRelActiActivityStatus" text="{ActivityStatus}" wrapping="false" />
 				</template>
 			</Column>
 			<Column id="ColumnRelActiPerson">
-				<m:Label id="LabelRelActiPerson" text="Person"/>
+				<m:Label id="LabelRelActiPerson" text="{i18n>Person}"/>
 				<template>
-					<m:Text id="TextRelActiPerson" text="{RelatedActivities>Person}" wrapping="false" />
+					<m:Text id="TextRelActiPerson" text="{Person}" wrapping="false" />
 				</template>
 			</Column>
 			<Column id="ColumnRelActiSubject">
-				<m:Label id="LabelRelActiSubject" text="Subject"/>
+				<m:Label id="LabelRelActiSubject" text="{i18n>Subject}"/>
 				<template>
-					<m:Text id="TextRelActiSubject" text="{RelatedActivities>Subject}" wrapping="false" />
+					<m:Text id="TextRelActiSubject" text="{Subject}" wrapping="false" />
 				</template>
 			</Column>
 			<Column id="ColumnRelActiTechnician">
-				<m:Label id="LabelRelActiTechnician" text="Technician"/>
+				<m:Label id="LabelRelActiTechnician" text="{i18n>Technician}"/>
 				<template>
-					<m:Text id="TextRelActiTechnician" text="{RelatedActivities>Technician}" wrapping="false" />
+					<m:Text id="TextRelActiTechnician" text="{Technician}" wrapping="false" />
 				</template>
 			</Column>
 			<Column id="ColumnRelActiActivityStartDate">
-				<m:Label id="LabelRelActiActivityStartDate" text="Activity Start Date"/>
+				<m:Label id="LabelRelActiActivityStartDate" text="{i18n>ActivityStartDate}"/>
 				<template>
-					<m:Text id="TextRelActiActivityStartDate" text="{RelatedActivities>ActivityStartDate}" wrapping="false" />
+					<m:Text id="TextRelActiActivityStartDate" text="{ path:'ActivityStartDate', type: 'sap.ui.model.odata.type.Date'}"/>
 				</template>
 			</Column>
 			<Column id="ColumnRelActiActivityStartTime">
-				<m:Label id="LabelRelActiActivityStartTime" text="Activity Start Time"/>
+				<m:Label id="LabelRelActiActivityStartTime" text="{i18n>ActivityStartTime}"/>
 				<template>
-					<m:Text id="TextRelActiActivityStartTime" text="{RelatedActivities>ActivityStartTime}" wrapping="false" />
+					<m:Text id="TextRelActiActivityStartTime" text="{ path: 'ActivityStartTime', type:'sap.ui.model.odata.type.Time'}"/>
 				</template>
 			</Column>
 			<Column id="ColumnRelActiActivityEndDate">
-				<m:Label id="LabelRelActiActivityEndDate" text="Activity End Date"/>
+				<m:Label id="LabelRelActiActivityEndDate" text="{i18n>ActivityEndDate}"/>
 				<template>
-					<m:Text id="TextRelActiActivityEndDate" text="{RelatedActivities>ActivityEndDate}" wrapping="false" />
+					<m:Text id="TextRelActiActivityEndDate" text="{path: 'ActivityEndDate', type:'sap.ui.model.odata.type.Date'}" />
 				</template>
 			</Column>
 			<Column id="ColumnRelActiActivityEndTime">
-				<m:Label id="LabelRelActiActivityEndTime" text="Activity End Time"/>
+				<m:Label id="LabelRelActiActivityEndTime" text="{i18n>ActivityEndTime}"/>
 				<template>
-					<m:Text id="TextRelActiActivityEndTime" text="{RelatedActivities>ActivityEndTime}" wrapping="false" />
+					<m:Text id="TextRelActiActivityEndTime" text="{path: 'ActivityEndTime', type:'sap.ui.model.odata.type.Time'}"/>
 				</template>
 			</Column>
 			<Column id="ColumnRelActiSourceActivity">
-				<m:Label id="LabelRelActiSourceActivity" text="Source Activity"/>
+				<m:Label id="LabelRelActiSourceActivity" text="{i18n>SourceActivity}"/>
 				<template>
-					<m:Text id="TextRelActiSourceActivity" text="{RelatedActivities>SourceActivity}" wrapping="false" />
+					<m:Text id="TextRelActiSourceActivity" text="{SourceActivity}" wrapping="false" />
 				</template>
 			</Column>
 		</columns>
-	</TreeTable>
+	</Table>
 
 </mvc:View>

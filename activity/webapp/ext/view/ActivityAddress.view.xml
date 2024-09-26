@@ -1,0 +1,41 @@
+<mvc:View xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="fsm.connector.activity.ext.controller.ActivityAddress">
+
+	<Select id="SelectId" forceSelection="false" selectedKey="B" items="{ path: 'to_ActivityAddress' }" change="onChange">
+		<core:Item id="ItemId" key="{AddressType}" text="{AddressTypeDescription}"/>
+	</Select>
+
+	<forms:SimpleForm id="AddressForm" editable="true" layout="ColumnLayout">
+		<Label id='LabelStreet' text="{i18n>Street}"/>
+		<Text id="TextStreet" text="{Street}"/>
+		<Label id="LabelStreetNo" text="{i18n>StreetNo}" />
+		<Text id="TextStreetNo" text="{Streetno}"/>
+		<Label id="LabelZipCode" text="{i18n>ZipCode}" />
+		<Text id="TextZipCode" text= "{Zipcode}"/>
+		<Label id="LabelCity" text="{i18n>City}" />
+		<Text id="TextZipCity" text= "{City}"/>
+		<Label id="LabelCountry" text="{i18n>Country}" />
+		<Text id="TextZipCountry" text= "{Country}"/>
+		<Label id="LabelCounty" text="{i18n>County}" />
+		<Text id="TextCounty" text= "{County}"/>
+		<Label id="LabelState" text="{i18n>State}" />
+		<Text id="TextState" text= "{State}"/>
+		<Label id="LabelBlock" text="{i18n>Block}" />
+		<Text id="TextBlock" text= "{Block}"/>
+		<Label id="LabelFloor" text="{i18n>Floor}" />
+		<Text id="TextFloor" text= "{Floor}"/>
+		<Label id="LabelRoom" text="{i18n>Room}" />
+		<Text id="TextRoom" text= "{Room}"/>
+	</forms:SimpleForm>
+	<forms:SimpleForm id="CoordinationForm" editable="true" layout="ColumnLayout">
+		<Label id='LabelLongitude' text="{i18n>Longitude}"/>
+		<Text id="TextLongitude" text="{Longitude}"/>
+		<Label id="LabelLatitude" text="{i18n>Latitude}" />
+		<Text id="TextLatitude" text="{Latitude}"/>
+	</forms:SimpleForm>
+
+</mvc:View>

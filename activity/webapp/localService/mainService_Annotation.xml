@@ -23,6 +23,9 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema Namespace="com.sap.pacg.ecm_ui_activity_o2_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_xpacgxecm_activity.ActivityType/Remarks">
+                <Annotation Term="UI.MultiLineText"/>
+            </Annotations>
             <Annotations Target="cds_xpacgxecm_activity.ActivityType/ActivityStatus">
                 <Annotation Term="Common.Text" Path="ActivityStatusDescription">
                     <Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/>
@@ -40,6 +43,9 @@
                             <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#ActivityHeaderLeft"/>
                         </Record>
                         <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#ActivityHeaderMiddle"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
                             <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#ActivityHeaderRight"/>
                         </Record>
                     </Collection>
@@ -47,91 +53,49 @@
                 <Annotation Term="UI.Facets">
                     <Collection>
                         <Record Type="UI.CollectionFacet">
-                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Label" String="Aktivitätsdetails"/>
                             <PropertyValue Property="ID" String="ActivityDetailsCollection"/>
                             <PropertyValue Property="Facets">
                                 <Collection>
                                     <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String=""/>
+                                        <PropertyValue Property="Label" String="Aktivitätsdetails"/>
                                         <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#ActivityDetails"/>
                                     </Record>
                                 </Collection>
                             </PropertyValue>
                         </Record>
                         <Record Type="UI.CollectionFacet">
-                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Label" String="Partnerdaten"/>
                             <PropertyValue Property="ID" String="PartnerDataCollection"/>
                             <PropertyValue Property="Facets">
                                 <Collection>
                                     <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String=""/>
+                                        <PropertyValue Property="Label" String="Partnerdaten"/>
                                         <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#PartnerData"/>
                                     </Record>
                                 </Collection>
                             </PropertyValue>
                         </Record>
                         <Record Type="UI.CollectionFacet">
-                            <PropertyValue Property="Label" String=""/>
-                            <PropertyValue Property="ID" String="SupportingPersonsCollection"/>
-                            <PropertyValue Property="Facets">
-                                <Collection>
-                                    <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String=""/>
-                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#SupportingPersons"/>
-                                    </Record>
-                                    <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String=""/>
-                                        <PropertyValue Property="ID" String="SupportingPersons"/>
-                                        <PropertyValue Property="Target" AnnotationPath="to_SupportingPersons/@UI.LineItem"/>
-                                        <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
-                                    </Record>
-                                </Collection>
-                            </PropertyValue>
-                        </Record>
-                        <Record Type="UI.CollectionFacet">
-                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Label" String="Bemerkungen"/>
                             <PropertyValue Property="ID" String="RemarksCollection"/>
                             <PropertyValue Property="Facets">
                                 <Collection>
                                     <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String=""/>
+                                        <PropertyValue Property="Label" String="Bemerkungen"/>
                                         <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Remarks"/>
                                     </Record>
                                 </Collection>
                             </PropertyValue>
                         </Record>
                         <Record Type="UI.CollectionFacet">
-                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Label" String="Datum"/>
                             <PropertyValue Property="ID" String="DatesCollection"/>
                             <PropertyValue Property="Facets">
                                 <Collection>
                                     <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String=""/>
+                                        <PropertyValue Property="Label" String="Datum"/>
                                         <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Dates"/>
-                                    </Record>
-                                </Collection>
-                            </PropertyValue>
-                        </Record>
-                        <Record Type="UI.CollectionFacet">
-                            <PropertyValue Property="Label" String=""/>
-                            <PropertyValue Property="ID" String="RelatedActivitiesCollection"/>
-                            <PropertyValue Property="Facets">
-                                <Collection>
-                                    <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String=""/>
-                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#RelatedActivities"/>
-                                    </Record>
-                                </Collection>
-                            </PropertyValue>
-                        </Record>
-                        <Record Type="UI.CollectionFacet">
-                            <PropertyValue Property="Label" String=""/>
-                            <PropertyValue Property="ID" String="ActivityAddressCollection"/>
-                            <PropertyValue Property="Facets">
-                                <Collection>
-                                    <Record Type="UI.ReferenceFacet">
-                                        <PropertyValue Property="Label" String=""/>
-                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#ActivityAddress"/>
                                     </Record>
                                 </Collection>
                             </PropertyValue>
@@ -146,13 +110,13 @@
                                     <PropertyValue Property="Value" Path="Subject"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="ActivityStatus"/>
-                                </Record>
-                                <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="ActivityTopic"/>
                                 </Record>
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="PreviousActivityNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="ActivityStatus"/>
                                 </Record>
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="SourceActivity"/>
@@ -193,7 +157,27 @@
                                     <PropertyValue Property="Value" Path="OrderNumber"/>
                                 </Record>
                                 <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="OperationNumber"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="ActivityHeaderMiddle">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="WBSElement"/>
+                                </Record>
+                                <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="NotificationNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="SequentialTaskNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Split"/>
                                 </Record>
                             </Collection>
                         </PropertyValue>
@@ -250,16 +234,16 @@
                                     <PropertyValue Property="Value" Path="Customer"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="Contact"/>
+                                    <PropertyValue Property="Value" Path="CustomerContactPerson"/>
                                 </Record>
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="PersonNumber"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="Technician"/>
+                                    <PropertyValue Property="Value" Path="TechnitianWorkCenter"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="TechnitianWorkCenter"/>
+                                    <PropertyValue Property="Value" Path="Technician"/>
                                 </Record>
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="TeamId"/>
@@ -278,14 +262,17 @@
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="InternalRemarks2"/>
                                 </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Remarks"/>
+                                </Record>
                             </Collection>
                         </PropertyValue>
                     </Record>
                 </Annotation>
                 <Annotation Term="UI.HeaderInfo">
                     <Record>
-                        <PropertyValue Property="TypeName" String=""/>
-                        <PropertyValue Property="TypeNamePlural" String=""/>
+                        <PropertyValue Property="TypeName" String="Aktivitätsnummer"/>
+                        <PropertyValue Property="TypeNamePlural" String="Aktivitätsnummer"/>
                         <PropertyValue Property="Title">
                             <Record Type="UI.DataField">
                                 <PropertyValue Property="Value" Path="ActivityNumber"/>
@@ -301,7 +288,7 @@
                 <Annotation Term="UI.Identification">
                     <Collection>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="Label" String="Aktivitätsnummer"/>
                             <PropertyValue Property="Value" Path="ActivityNumber"/>
                         </Record>
                         <Record Type="UI.DataField">
@@ -364,54 +351,7 @@
                     </Collection>
                 </Annotation>
             </Annotations>
-            <Annotations Target="cds_xpacgxecm_activity.SupportingPersonsType/ActivityNumber">
-                <Annotation Term="UI.Hidden"/>
-            </Annotations>
-            <Annotations Target="cds_xpacgxecm_activity.SupportingPersonsType/Person">
-                <Annotation Term="UI.Hidden"/>
-            </Annotations>
-            <Annotations Target="cds_xpacgxecm_activity.SupportingPersonsType/PersonEmployee">
-                <Annotation Term="UI.Hidden"/>
-            </Annotations>
-            <Annotations Target="cds_xpacgxecm_activity.SupportingPersonsType/SupportingPerson">
-                <Annotation Term="UI.Hidden"/>
-            </Annotations>
-            <Annotations Target="cds_xpacgxecm_activity.SupportingPersonsType/SupportingPersonName">
-                <Annotation Term="UI.Hidden"/>
-            </Annotations>
-            <Annotations Target="cds_xpacgxecm_activity.SupportingPersonsType">
-                <Annotation Term="UI.FieldGroup" Qualifier="SupportingPerson">
-                    <Record>
-                        <PropertyValue Property="Data">
-                            <Collection>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="SupportingPerson"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="SupportingPersonName"/>
-                                </Record>
-                            </Collection>
-                        </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="UI.Identification">
-                    <Collection>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="SupportingPerson"/>
-                        </Record>
-                    </Collection>
-                </Annotation>
-                <Annotation Term="UI.LineItem">
-                    <Collection>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="SupportingPerson"/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
-                        </Record>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="SupportingPersonName"/>
-                        </Record>
-                    </Collection>
-                </Annotation>
+            <Annotations Target="cds_xpacgxecm_activity.ActivityRelatedType">
                 <Annotation Term="UI.PresentationVariant">
                     <Record>
                         <PropertyValue Property="Visualizations">

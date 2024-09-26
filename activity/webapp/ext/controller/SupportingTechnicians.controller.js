@@ -1,5 +1,8 @@
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 	"use strict";
 
-	return Controller.extend("fsm.connector.activity.ext.RelatedActivities", {});
+	return Controller.extend(
+		"fsm.connector.activity.ext.SupportingTechnicians",
+		{}
+	);
 });

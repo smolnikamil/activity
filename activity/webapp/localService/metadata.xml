@@ -40,10 +40,11 @@
                 <Property Name="SalesOffice" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Verkaufsbüro"/>
                 <Property Name="ActivityType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="ActivityTypeDescription" sap:label="FSM Aktivitätsart"/>
                 <Property Name="ActivityStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:text="ActivityStatusDescription" sap:label="Aktivitätsstatus"/>
-                <Property Name="Customer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Debitor"/>
+                <Property Name="Customer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:text="CustomerName" sap:label="Debitor"/>
                 <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Warenempfänger"/>
-                <Property Name="Contact" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:label="Ansprechpartner"/>
-                <Property Name="PersonNumber" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Personalnummer"/>
+                <Property Name="CustomerContactPerson" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:text="CustomerContactPersonFullName" sap:label="Ansprechpartner"/>
+                <Property Name="CustomerContactPersonFullName" Type="Edm.String" MaxLength="81"/>
+                <Property Name="PersonNumber" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:text="PersonFullName" sap:label="Personalnummer"/>
                 <Property Name="ActivityTopic" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Aktivitätsthema"/>
                 <Property Name="Subject" Type="Edm.String" MaxLength="255" sap:label="Betreff"/>
                 <Property Name="Technician" Type="Edm.String" MaxLength="32"/>
@@ -71,7 +72,7 @@
                 <Property Name="SequentialTaskNumber" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Maßnahme"/>
                 <Property Name="EquipmentNumber" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Equipment"/>
                 <Property Name="FunctionalLocation" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label=""/>
-                <Property Name="TeamId" Type="Edm.String" MaxLength="128" sap:display-format="UpperCase" sap:label="Team Id"/>
+                <Property Name="TeamId" Type="Edm.String" MaxLength="128" sap:display-format="UpperCase" sap:text="TeamName" sap:label="Team Id"/>
                 <Property Name="TimeZoneId" Type="Edm.String" MaxLength="50" sap:label="Zeitzone"/>
                 <Property Name="Execstage" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="FSM Execution stage"/>
                 <Property Name="Region" Type="Edm.String" MaxLength="128" sap:label="Region Id"/>
@@ -80,7 +81,7 @@
                 <Property Name="HazardType" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Gefahrenart"/>
                 <Property Name="LatestStartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Spätetes Startdatum"/>
                 <Property Name="LatestStartTime" Type="Edm.Time" Precision="0" sap:label="Späteste Startzeit"/>
-                <Property Name="TechnitianWorkCenter" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Techn. Arbeitsplatz"/>
+                <Property Name="TechnitianWorkCenter" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:text="WorkCenterText" sap:label="Techn. Arbeitsplatz"/>
                 <Property Name="TechnitianArbaitPlatz" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Work center"/>
                 <Property Name="TechnitianWorkCenterPlant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Techn. Arbeitsplatz"/>
                 <Property Name="ObjectReferenceType" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Cloudobjekttyp"/>
@@ -110,38 +111,54 @@
                 <Property Name="ServiceRatingVirtual" Type="Edm.String" MaxLength="80" sap:label="Bezeichnung" sap:quickinfo="Beschreibung 80" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="FSMCompanyName" Type="Edm.String" MaxLength="40" sap:label="Mandantenname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="ActivityStatusAdjusted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Aktivitätsstatus" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Remarks" Type="Edm.String" MaxLength="256" sap:label="" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="ActivityStatusDescription" Type="Edm.String" MaxLength="40" sap:label="Bezeichnung" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="ServiceRatingText" Type="Edm.String" MaxLength="80" sap:label="Bezeichnung" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="SalesOrganizationName" Type="Edm.String" MaxLength="20" sap:label="Beschreibung der Verkaufsorganisation" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="DistributionChannelName" Type="Edm.String" MaxLength="20" sap:label="Beschreibung des Vertriebswegs" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="DivisionName" Type="Edm.String" MaxLength="20" sap:label="Beschreibung der Sparte" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="ActivityTypeDescription" Type="Edm.String" MaxLength="40" sap:label="Bezeichnung" sap:quickinfo="Beschreibung 40" sap:creatable="false" sap:updatable="false"/>
-                <Property Name="InternalRemarks" Type="Edm.String" MaxLength="255" sap:label="Interne Bemerkungen" sap:creatable="false" sap:updatable="false"/>
-                <Property Name="InternalRemarks2" Type="Edm.String" MaxLength="255" sap:label="Interne Bemerkungen" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="WorkCenterText" Type="Edm.String" MaxLength="40" sap:label="Arbeitsplatztext" sap:quickinfo="Text zum Arbeitsplatz" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="InternalRemarks" Type="Edm.String" MaxLength="255" sap:label="Interne Bemerkungen" sap:quickinfo="E4C: Interne Bemerkungen zum Aktivitätsobjekt" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="InternalRemarks2" Type="Edm.String" MaxLength="255" sap:label="Int. Bem. 2" sap:quickinfo="E4C: Zusätz. interne Bemerkungen für das Aktivitätsobjekt" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="TeamName" Type="Edm.String" MaxLength="40" sap:label="Teamname" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PersonFullName" Type="Edm.String" MaxLength="80" sap:label="Vollständiger Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="220" sap:display-format="UpperCase" sap:label="Kundenname" sap:quickinfo="Vollständiger Name des Kunden" sap:creatable="false" sap:updatable="false"/>
                 <NavigationProperty Name="toActivityAttachments" Relationship="cds_xpacgxecm_activity.assoc_BFCD2493875047A315659A95E3EED44E" FromRole="FromRole_assoc_BFCD2493875047A315659A95E3EED44E" ToRole="ToRole_assoc_BFCD2493875047A315659A95E3EED44E"/>
                 <NavigationProperty Name="toActivityRelated" Relationship="cds_xpacgxecm_activity.assoc_293813CEEA0EA13109DE9CEE51769072" FromRole="FromRole_assoc_293813CEEA0EA13109DE9CEE51769072" ToRole="ToRole_assoc_293813CEEA0EA13109DE9CEE51769072"/>
-                <NavigationProperty Name="to_SupportingPersons" Relationship="cds_xpacgxecm_activity.assoc_169819CDD3A5296E0620CA0039AA51DB" FromRole="FromRole_assoc_169819CDD3A5296E0620CA0039AA51DB" ToRole="ToRole_assoc_169819CDD3A5296E0620CA0039AA51DB"/>
+                <NavigationProperty Name="toSupportingTechnicians" Relationship="cds_xpacgxecm_activity.assoc_B552ECCCE2B1D563DBFED15E985C74FB" FromRole="FromRole_assoc_B552ECCCE2B1D563DBFED15E985C74FB" ToRole="ToRole_assoc_B552ECCCE2B1D563DBFED15E985C74FB"/>
+                <NavigationProperty Name="to_ActivityAddress" Relationship="cds_xpacgxecm_activity.assoc_AC053D70F777B345A97D1B9BFBF6E39F" FromRole="FromRole_assoc_AC053D70F777B345A97D1B9BFBF6E39F" ToRole="ToRole_assoc_AC053D70F777B345A97D1B9BFBF6E39F"/>
+            </EntityType>
+            <EntityType Name="ActivityAddressType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ActivityNumber"/>
+                    <PropertyRef Name="AddressType"/>
+                </Key>
+                <Property Name="ActivityNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Aktivitätsnummer" sap:quickinfo="E4C Aktivitätsnummer"/>
+                <Property Name="AddressType" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:label="Aktivitätsadr.typen" sap:quickinfo="Aktivitätsadressentypen"/>
+                <Property Name="AddressTypeDescription" Type="Edm.String" MaxLength="60" sap:label="Bezeichnung" sap:quickinfo="Beschreibung 60"/>
+                <Property Name="ActivityAddress" Type="Edm.String" MaxLength="128" sap:display-format="UpperCase" sap:label=""/>
+                <Property Name="Longitude" Type="Edm.String" MaxLength="25" sap:display-format="UpperCase" sap:label="Länge" sap:quickinfo="Längengrad 25"/>
+                <Property Name="Latitude" Type="Edm.String" MaxLength="25" sap:display-format="UpperCase" sap:label="Breite" sap:quickinfo="Breitengrad 25"/>
+                <Property Name="Street" Type="Edm.String" MaxLength="60" sap:label="Straße"/>
+                <Property Name="Streetno" Type="Edm.String" MaxLength="10" sap:label="Hausnummer"/>
+                <Property Name="Zipcode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postleitzahl" sap:quickinfo="Postleitzahl des Orts"/>
+                <Property Name="City" Type="Edm.String" MaxLength="40" sap:label="Ort"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Länderschlüssel"/>
+                <Property Name="County" Type="Edm.String" MaxLength="40" sap:label="Ortsteil"/>
+                <Property Name="State" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Region" sap:quickinfo="Region (Bundesstaat, Bundesland, Provinz, Grafschaft)"/>
+                <Property Name="Block" Type="Edm.String" MaxLength="10" sap:label="Zusatz" sap:quickinfo="Ergänzung zur Hausnummer"/>
+                <Property Name="Building" Type="Edm.String" MaxLength="20" sap:label="Gebäudekürzel" sap:quickinfo="Gebäude (Nummer oder Kürzel)"/>
+                <Property Name="Floor" Type="Edm.String" MaxLength="10" sap:label="Stockwerk" sap:quickinfo="Stockwerk im Gebäude"/>
+                <Property Name="Room" Type="Edm.String" MaxLength="10" sap:label="Raumnummer" sap:quickinfo="Nummer einer Wohnung, eines Appartements oder eines Raumes"/>
             </EntityType>
             <EntityType Name="ActivityRemarksType" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="ActivityNumber"/>
                 </Key>
                 <Property Name="ActivityNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Aktivitätsnummer" sap:quickinfo="E4C Aktivitätsnummer"/>
-                <Property Name="InternalRemarks" Type="Edm.String" MaxLength="255" sap:label="Interne Bemerkungen" sap:quickinfo="E4C: Interne Bemerkungen zum Aktivitätsobjekt"/>
-                <Property Name="InternalRemarks2" Type="Edm.String" MaxLength="255" sap:label="Interne Bemerkungen" sap:quickinfo="E4C: Interne Bemerkungen zum Aktivitätsobjekt"/>
-            </EntityType>
-            <EntityType Name="SupportingPersonsType" sap:content-version="1">
-                <Key>
-                    <PropertyRef Name="ActivityNumber"/>
-                    <PropertyRef Name="Person"/>
-                </Key>
-                <Property Name="ActivityNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Aktivitätsnummer" sap:quickinfo="E4C Aktivitätsnummer"/>
-                <Property Name="Person" Type="Edm.String" Nullable="false" MaxLength="14" sap:display-format="UpperCase" sap:label=""/>
-                <Property Name="PersonUserId" Type="Edm.String" MaxLength="3"/>
-                <Property Name="PersonEmployee" Type="Edm.String" MaxLength="8"/>
-                <Property Name="SupportingPerson" Type="Edm.String" MaxLength="14" sap:display-format="UpperCase" sap:label="" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="SupportingPersonName" Type="Edm.String" MaxLength="80" sap:label="Vollständiger Name" sap:heading="" sap:quickinfo="Vollständiger Name der Person" sap:sortable="false" sap:filterable="false"/>
-                <NavigationProperty Name="to_Activity" Relationship="cds_xpacgxecm_activity.assoc_32326D3FD603F38D95737E43989E7ACF" FromRole="FromRole_assoc_32326D3FD603F38D95737E43989E7ACF" ToRole="ToRole_assoc_32326D3FD603F38D95737E43989E7ACF"/>
+                <Property Name="CompanyId" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="FSM Mandant ID"/>
+                <Property Name="Remarks" Type="Edm.String" MaxLength="256" sap:label=""/>
             </EntityType>
             <EntityType Name="ActivityAttachmentsType" sap:content-version="1">
                 <Key>
@@ -170,18 +187,29 @@
                 <Property Name="ArObject" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Dokumentart"/>
                 <Property Name="Reserve" Type="Edm.String" MaxLength="27" sap:display-format="UpperCase" sap:label="Reserve" sap:quickinfo="SAP ArchiveLink Reserve für künftige Anwendungsfälle"/>
             </EntityType>
+            <EntityType Name="ActivityInternalRemarksType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ActivityNumber"/>
+                </Key>
+                <Property Name="ActivityNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Aktivitätsnummer" sap:quickinfo="E4C Aktivitätsnummer"/>
+                <Property Name="InternalRemarks" Type="Edm.String" MaxLength="255" sap:label="Interne Bemerkungen" sap:quickinfo="E4C: Interne Bemerkungen zum Aktivitätsobjekt"/>
+                <Property Name="InternalRemarks2" Type="Edm.String" MaxLength="255" sap:label="Int. Bem. 2" sap:quickinfo="E4C: Zusätz. interne Bemerkungen für das Aktivitätsobjekt"/>
+                <Property Name="CreatedOnDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Angelegt am" sap:quickinfo="Datum, an dem der Satz hinzugefügt wurde"/>
+                <Property Name="CreatedOnTime" Type="Edm.Time" Precision="0" sap:label="Uhrzeit" sap:quickinfo="Erfassungszeit"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Angelegt von" sap:quickinfo="Name des Sachbearbeiters, der das Objekt hinzugefügt hat"/>
+                <Property Name="ChangedOnDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Geändert am" sap:quickinfo="Datum der letzten Änderung"/>
+                <Property Name="ChangedOnTime" Type="Edm.Time" Precision="0" sap:label="Änderungszeit" sap:quickinfo="Zeitpunkt der letzten Änderung"/>
+                <Property Name="ChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Geändert von" sap:quickinfo="Name des Sachbearbeiters, der das Objekt geändert hat."/>
+            </EntityType>
             <EntityType Name="ActivityRelatedType" sap:content-version="1">
                 <Key>
-                    <PropertyRef Name="NodeID"/>
+                    <PropertyRef Name="ActivityNumber"/>
+                    <PropertyRef Name="OrderNumber"/>
+                    <PropertyRef Name="OperationNumber"/>
                 </Key>
-                <Property Name="NodeID" Type="Edm.Int32" Nullable="false"/>
-                <Property Name="ParentNodeID" Type="Edm.Int32"/>
-                <Property Name="HierarchyLevel" Type="Edm.Int32"/>
-                <Property Name="DrillState" Type="Edm.String" MaxLength="10"/>
-                <Property Name="Description" Type="Edm.String" MaxLength="60" sap:label="Bezeichnung" sap:quickinfo="Beschreibung 60"/>
-                <Property Name="ActivityNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Aktivitätsnummer" sap:quickinfo="E4C Aktivitätsnummer"/>
-                <Property Name="OrderNumber" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Auftrag" sap:quickinfo="Auftragsnummer"/>
-                <Property Name="OperationNumber" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label=""/>
+                <Property Name="ActivityNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Aktivitätsnummer" sap:quickinfo="E4C Aktivitätsnummer"/>
+                <Property Name="OrderNumber" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="Auftrag" sap:quickinfo="Auftragsnummer"/>
+                <Property Name="OperationNumber" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label=""/>
                 <Property Name="ActivityStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Aktivitätsstatus"/>
                 <Property Name="Person" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Personalnummer"/>
                 <Property Name="Subject" Type="Edm.String" MaxLength="255" sap:label="Betreff"/>
@@ -192,53 +220,210 @@
                 <Property Name="ActivityEndTime" Type="Edm.Time" Precision="0" sap:label=""/>
                 <Property Name="SourceActivity" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="U. Aktivität No" sap:quickinfo="E4C Ursprungsaktivitätsnummer"/>
             </EntityType>
+            <EntityType Name="SupportingTechniciansType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ActivityNumber"/>
+                    <PropertyRef Name="Person"/>
+                </Key>
+                <Property Name="ActivityNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Aktivitätsnummer" sap:quickinfo="E4C Aktivitätsnummer"/>
+                <Property Name="Person" Type="Edm.String" Nullable="false" MaxLength="14" sap:display-format="UpperCase" sap:label=""/>
+                <Property Name="PersonUserId" Type="Edm.String" MaxLength="3"/>
+                <Property Name="PersonEmployee" Type="Edm.String" MaxLength="8"/>
+                <Property Name="SupportingPerson" Type="Edm.String" MaxLength="14" sap:display-format="UpperCase" sap:label="" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SupportingPersonName" Type="Edm.String" MaxLength="80" sap:label="Vollständiger Name" sap:heading="" sap:quickinfo="Vollständiger Name der Person" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="to_WorkforcePerson" Relationship="cds_xpacgxecm_activity.assoc_ADD7936CD25C45F22B8F5402A1BD3EED" FromRole="FromRole_assoc_ADD7936CD25C45F22B8F5402A1BD3EED" ToRole="ToRole_assoc_ADD7936CD25C45F22B8F5402A1BD3EED"/>
+            </EntityType>
+            <EntityType Name="FsmTeamType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="GuidKey"/>
+                </Key>
+                <Property Name="GuidKey" Type="Edm.Guid" Nullable="false" sap:label="Team GUID"/>
+                <Property Name="CompanyId" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="FSM Mandant ID"/>
+                <Property Name="TeamName" Type="Edm.String" MaxLength="40" sap:label="Teamname"/>
+                <Property Name="TeamDescription" Type="Edm.String" MaxLength="255" sap:display-format="UpperCase" sap:label="Teambeschreibung"/>
+                <Property Name="CloudMessageType" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Cloudobjekttyp"/>
+                <Property Name="ObjectKey" Type="Edm.String" MaxLength="128" sap:display-format="UpperCase" sap:label="Objektschlüssel"/>
+                <Property Name="StartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Gültig ab" sap:quickinfo="Gültigkeitsbeginn"/>
+                <Property Name="EndDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Gültig bis" sap:quickinfo="Gültigkeitsende"/>
+                <Property Name="ShiftName" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Schicht Beschreibung"/>
+                <Property Name="CreatedOnDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Angelegt am" sap:quickinfo="Datum, an dem der Satz hinzugefügt wurde"/>
+                <Property Name="CreatedOnTime" Type="Edm.Time" Precision="0" sap:label="Uhrzeit" sap:quickinfo="Erfassungszeit"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Angelegt von" sap:quickinfo="Name des Sachbearbeiters, der das Objekt hinzugefügt hat"/>
+                <Property Name="ChangedOnDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Geändert am" sap:quickinfo="Datum der letzten Änderung"/>
+                <Property Name="ChangedOnTime" Type="Edm.Time" Precision="0" sap:label="Änderungszeit" sap:quickinfo="Zeitpunkt der letzten Änderung"/>
+                <Property Name="ChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Geändert von" sap:quickinfo="Name des Sachbearbeiters, der das Objekt geändert hat."/>
+                <Property Name="Delation" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Löschkennzeichen" sap:quickinfo="Löschen vorgemerkt"/>
+            </EntityType>
+            <EntityType Name="ContactPersonType" sap:label="Ansprechpartnerdaten Kunde" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ContactPerson"/>
+                </Key>
+                <Property Name="ContactPerson" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label="Ansprechpartner" sap:quickinfo="Ansprechpartner-Nummer"/>
+                <Property Name="Customer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Debitor" sap:quickinfo="Debitorennummer"/>
+                <Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Lieferant" sap:quickinfo="Kontonummer des Lieferanten bzw. Kreditors"/>
+                <Property Name="ContactPersonFunction" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Funktion" sap:quickinfo="Funktion des Ansprechpartners"/>
+                <Property Name="ContactPersonDepartment" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Abteilung" sap:quickinfo="Abteilung des Ansprechpartners"/>
+                <Property Name="SearchTerm1" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Suchbegriff" sap:quickinfo="Sortierfeld"/>
+                <Property Name="PersonNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Personennummer"/>
+                <Property Name="UpperCaseFirstName" Type="Edm.String" MaxLength="25" sap:display-format="UpperCase" sap:label="Vorname" sap:quickinfo="Vorname in Großbuchstaben für Suchhilfe"/>
+                <Property Name="UpperCaseLastName" Type="Edm.String" MaxLength="25" sap:display-format="UpperCase" sap:label="Nachname" sap:quickinfo="Nachname in Großbuchstaben für Suchhilfe"/>
+                <Property Name="FirstName" Type="Edm.String" MaxLength="40" sap:label="Vorname"/>
+                <Property Name="LastName" Type="Edm.String" MaxLength="40" sap:label="Nachname"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Zweck erfüllt" sap:quickinfo="Kennzeichen für erfüllten Geschäftszweck"/>
+                <NavigationProperty Name="to_Customer" Relationship="cds_xpacgxecm_activity.assoc_7977C698821E8619A3B2CA0EB634B467" FromRole="FromRole_assoc_7977C698821E8619A3B2CA0EB634B467" ToRole="ToRole_assoc_7977C698821E8619A3B2CA0EB634B467"/>
+            </EntityType>
+            <EntityType Name="CustomerType" sap:label="Kunde" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="CustomerName" sap:label="Debitor" sap:quickinfo="Debitorennummer"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:label="Name des Kunden"/>
+                <Property Name="CustomerFullName" Type="Edm.String" MaxLength="220" sap:display-format="UpperCase" sap:label="Kundenname" sap:quickinfo="Vollständiger Name des Kunden"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Angelegt von" sap:quickinfo="Name des Sachbearbeiters, der das Objekt hinzugefügt hat"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Angelegt am" sap:quickinfo="Datum, an dem der Satz hinzugefügt wurde"/>
+                <Property Name="AddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Adresse"/>
+                <Property Name="CustomerClassification" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Kundenklassifiz." sap:quickinfo="Kundenklassifizierung"/>
+                <Property Name="VATRegistration" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Umsatzsteuer-Id.Nr" sap:quickinfo="Umsatzsteuer-Identifikationsnummer"/>
+                <Property Name="CustomerAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Kontengruppe" sap:quickinfo="Kontengruppe Debitor"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Berechtigung" sap:quickinfo="Berechtigungsgruppe"/>
+                <Property Name="DeliveryIsBlocked" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Liefersperre" sap:quickinfo="Zentrale Liefersperre für Debitor"/>
+                <Property Name="PostingIsBlocked" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Buchungssperre" sap:quickinfo="Zentrale Buchungssperre"/>
+                <Property Name="BillingIsBlockedForCustomer" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Fakturasperre" sap:quickinfo="Zentrale Fakturasperre für Debitor"/>
+                <Property Name="OrderIsBlockedForCustomer" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Auftragssperre" sap:quickinfo="Zentrale Auftragssperre für Debitor"/>
+                <Property Name="InternationalLocationNumber1" Type="Edm.String" MaxLength="7" sap:display-format="NonNegative" sap:label="Int. Lokationsnr. 1" sap:quickinfo="Internationale Lokationsnummer (Teil 1)"/>
+                <Property Name="IsOneTimeAccount" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="CPD-Konto" sap:quickinfo="Kennzeichen: Ist das Konto ein CPD-Konto ?"/>
+                <Property Name="TaxJurisdiction" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="Steuerstandort"/>
+                <Property Name="Industry" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Branche" sap:quickinfo="Branchenschlüssel"/>
+                <Property Name="TaxNumberType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Steuernummertyp"/>
+                <Property Name="TaxNumber1" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Steuernummer 1"/>
+                <Property Name="TaxNumber2" Type="Edm.String" MaxLength="11" sap:display-format="UpperCase" sap:label="Steuernummer 2"/>
+                <Property Name="TaxNumber3" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Steuernummer 3"/>
+                <Property Name="TaxNumber4" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Steuernummer 4"/>
+                <Property Name="TaxNumber5" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="Steuernummer 5"/>
+                <Property Name="CustomerCorporateGroup" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Konzernschlüssel"/>
+                <Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Lieferant" sap:quickinfo="Kontonummer des Lieferanten bzw. Kreditors"/>
+                <Property Name="NielsenRegion" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Nielsenbezirk" sap:quickinfo="Nielsen-Bezirk"/>
+                <Property Name="IndustryCode1" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Branchencode 1"/>
+                <Property Name="IndustryCode2" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Branchencode 2"/>
+                <Property Name="IndustryCode3" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Branchencode 3"/>
+                <Property Name="IndustryCode4" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Branchencode 4"/>
+                <Property Name="IndustryCode5" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Branchencode 5"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Land" sap:quickinfo="Länderschlüssel"/>
+                <Property Name="OrganizationBPName1" Type="Edm.String" MaxLength="35" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="OrganizationBPName2" Type="Edm.String" MaxLength="35" sap:label="Name 2"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="Ort"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postleitzahl"/>
+                <Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Straße" sap:quickinfo="Straße und Hausnummer"/>
+                <Property Name="SortField" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Suchbegriff" sap:quickinfo="Sortierfeld"/>
+                <Property Name="FaxNumber" Type="Edm.String" MaxLength="31" sap:label="Telefaxnummer"/>
+                <Property Name="BR_SUFRAMACode" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase" sap:label="Suframa-Code"/>
+                <Property Name="Region" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Region" sap:quickinfo="Region (Bundesstaat, Bundesland, Provinz, Grafschaft)"/>
+                <Property Name="TelephoneNumber1" Type="Edm.String" MaxLength="16" sap:label="Telefon-1" sap:quickinfo="1. Telefonnummer"/>
+                <Property Name="TelephoneNumber2" Type="Edm.String" MaxLength="16" sap:label="Telefon-2" sap:quickinfo="2. Telefonnummer"/>
+                <Property Name="AlternativePayerAccount" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Abw.Regulierer" sap:quickinfo="Kontonummer eines abweichenden Zahlungsregulierers"/>
+                <Property Name="DataMediumExchangeIndicator" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="DTA-Meldeschlüssel" sap:quickinfo="Meldeschlüssel für Datenträgeraustausch"/>
+                <Property Name="VATLiability" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Umsatzsteuerpfl." sap:quickinfo="Umsatzsteuerpflichtig"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Zweck erfüllt" sap:quickinfo="Kennzeichen für erfüllten Geschäftszweck"/>
+                <Property Name="ResponsibleType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Steuerart"/>
+                <Property Name="FiscalAddress" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Fisk. Anschrift" sap:quickinfo="Kontonummer des Stammsatzes mit der fiskalischen Anschrift"/>
+                <Property Name="NFPartnerIsNaturalPerson" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Natürliche Person"/>
+                <Property Name="DeletionIndicator" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Löschvormerk." sap:quickinfo="Zentrale Löschvormerkung für Stammsatz"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:label="Sprachenschlüssel"/>
+                <Property Name="TradingPartner" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:label="Partnergesellsch.Nr." sap:quickinfo="Partner Gesellschaftsnummer"/>
+                <Property Name="DeliveryDateTypeRule" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="LiefDatumsregel" sap:quickinfo="Lieferdatumsregel"/>
+                <Property Name="TaxInvoiceRepresentativeName" Type="Edm.String" MaxLength="10" sap:label="Name Repräs." sap:quickinfo="Name des Repräsentanten"/>
+                <Property Name="BusinessType" Type="Edm.String" MaxLength="30" sap:label="Geschäftstyp"/>
+                <Property Name="IndustryType" Type="Edm.String" MaxLength="30" sap:label="Industrietyp"/>
+                <Property Name="TW_CollvBillingIsSupported" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label=""/>
+            </EntityType>
+            <EntityType Name="WorkCenterTextType" sap:label="Arbeitsplatz - Text" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="WorkCenterTypeCode"/>
+                    <PropertyRef Name="WorkCenterInternalID"/>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="WorkCenterTypeCode" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Ressourcentyp" sap:quickinfo="Produktionsressourcentyp"/>
+                <Property Name="WorkCenterInternalID" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:text="WorkCenterText" sap:label="Objekt-ID" sap:quickinfo="Einsatzmittel Objektidentifikation"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Sprachenschlüssel"/>
+                <Property Name="WorkCenterText" Type="Edm.String" MaxLength="40" sap:label="Arbeitsplatztext" sap:quickinfo="Text zum Arbeitsplatz"/>
+                <Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Werk"/>
+                <Property Name="WorkCenterCategoryCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Arbeitsplatzart"/>
+            </EntityType>
+            <EntityType Name="WorkforcePersonType" sap:label="Personal - Details zur Person" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Person"/>
+                </Key>
+                <Property Name="Person" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="PersonFullName" sap:label="Geschäftspartner" sap:quickinfo="Geschäftspartnernummer"/>
+                <Property Name="PersonExternalID" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="IdentifikatNummer" sap:quickinfo="Identifikationsnummer"/>
+                <Property Name="FirstName" Type="Edm.String" MaxLength="40" sap:label="Vorname" sap:quickinfo="Vorname des Geschäftspartners (Person)"/>
+                <Property Name="LastName" Type="Edm.String" MaxLength="40" sap:label="Nachname" sap:quickinfo="Nachname des Geschäftspartners (Person)"/>
+                <Property Name="MiddleName" Type="Edm.String" MaxLength="40" sap:label="2. Vorname" sap:quickinfo="Mittlerer Name oder zweiter Vorname der Person"/>
+                <Property Name="AdditionalLastName" Type="Edm.String" MaxLength="40" sap:label="2. Nachname" sap:quickinfo="Zweiter Nachname der Person"/>
+                <Property Name="PersonFullName" Type="Edm.String" MaxLength="80" sap:label="Vollständiger Name"/>
+                <Property Name="BusinessPartnerUUID" Type="Edm.Guid" sap:label="GP-GUID" sap:quickinfo="GUID eines Geschäftspartners"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Berechtigungsgruppe"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="VerwendZweck erfüllt" sap:quickinfo="Kennzeichen für Erfüllung des Verwendungszwecks"/>
+            </EntityType>
+            <Association Name="assoc_7977C698821E8619A3B2CA0EB634B467" sap:content-version="1">
+                <End Type="cds_xpacgxecm_activity.ContactPersonType" Multiplicity="1" Role="FromRole_assoc_7977C698821E8619A3B2CA0EB634B467"/>
+                <End Type="cds_xpacgxecm_activity.CustomerType" Multiplicity="0..1" Role="ToRole_assoc_7977C698821E8619A3B2CA0EB634B467"/>
+            </Association>
+            <Association Name="assoc_ADD7936CD25C45F22B8F5402A1BD3EED" sap:content-version="1">
+                <End Type="cds_xpacgxecm_activity.SupportingTechniciansType" Multiplicity="1" Role="FromRole_assoc_ADD7936CD25C45F22B8F5402A1BD3EED"/>
+                <End Type="cds_xpacgxecm_activity.WorkforcePersonType" Multiplicity="*" Role="ToRole_assoc_ADD7936CD25C45F22B8F5402A1BD3EED"/>
+            </Association>
             <Association Name="assoc_293813CEEA0EA13109DE9CEE51769072" sap:content-version="1">
                 <End Type="cds_xpacgxecm_activity.ActivityType" Multiplicity="1" Role="FromRole_assoc_293813CEEA0EA13109DE9CEE51769072"/>
                 <End Type="cds_xpacgxecm_activity.ActivityRelatedType" Multiplicity="*" Role="ToRole_assoc_293813CEEA0EA13109DE9CEE51769072"/>
             </Association>
-            <Association Name="assoc_169819CDD3A5296E0620CA0039AA51DB" sap:content-version="1">
-                <End Type="cds_xpacgxecm_activity.ActivityType" Multiplicity="1" Role="FromRole_assoc_169819CDD3A5296E0620CA0039AA51DB">
-                    <OnDelete Action="Cascade"/>
-                </End>
-                <End Type="cds_xpacgxecm_activity.SupportingPersonsType" Multiplicity="*" Role="ToRole_assoc_169819CDD3A5296E0620CA0039AA51DB"/>
-                <ReferentialConstraint>
-                    <Principal Role="FromRole_assoc_169819CDD3A5296E0620CA0039AA51DB">
-                        <PropertyRef Name="ActivityNumber"/>
-                    </Principal>
-                    <Dependent Role="ToRole_assoc_169819CDD3A5296E0620CA0039AA51DB">
-                        <PropertyRef Name="ActivityNumber"/>
-                    </Dependent>
-                </ReferentialConstraint>
+            <Association Name="assoc_B552ECCCE2B1D563DBFED15E985C74FB" sap:content-version="1">
+                <End Type="cds_xpacgxecm_activity.ActivityType" Multiplicity="1" Role="FromRole_assoc_B552ECCCE2B1D563DBFED15E985C74FB"/>
+                <End Type="cds_xpacgxecm_activity.SupportingTechniciansType" Multiplicity="*" Role="ToRole_assoc_B552ECCCE2B1D563DBFED15E985C74FB"/>
+            </Association>
+            <Association Name="assoc_AC053D70F777B345A97D1B9BFBF6E39F" sap:content-version="1">
+                <End Type="cds_xpacgxecm_activity.ActivityType" Multiplicity="1" Role="FromRole_assoc_AC053D70F777B345A97D1B9BFBF6E39F"/>
+                <End Type="cds_xpacgxecm_activity.ActivityAddressType" Multiplicity="*" Role="ToRole_assoc_AC053D70F777B345A97D1B9BFBF6E39F"/>
             </Association>
             <Association Name="assoc_BFCD2493875047A315659A95E3EED44E" sap:content-version="1">
                 <End Type="cds_xpacgxecm_activity.ActivityType" Multiplicity="1" Role="FromRole_assoc_BFCD2493875047A315659A95E3EED44E"/>
                 <End Type="cds_xpacgxecm_activity.ActivityAttachmentsType" Multiplicity="*" Role="ToRole_assoc_BFCD2493875047A315659A95E3EED44E"/>
             </Association>
-            <Association Name="assoc_32326D3FD603F38D95737E43989E7ACF" sap:content-version="1">
-                <End Type="cds_xpacgxecm_activity.SupportingPersonsType" Multiplicity="1" Role="FromRole_assoc_32326D3FD603F38D95737E43989E7ACF"/>
-                <End Type="cds_xpacgxecm_activity.ActivityType" Multiplicity="1" Role="ToRole_assoc_32326D3FD603F38D95737E43989E7ACF"/>
-            </Association>
             <EntityContainer Name="cds_xpacgxecm_activity_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
                 <EntitySet Name="Activity" EntityType="cds_xpacgxecm_activity.ActivityType" sap:deletable="false" sap:content-version="1"/>
-                <EntitySet Name="ActivityRemarks" EntityType="cds_xpacgxecm_activity.ActivityRemarksType" sap:deletable="false" sap:content-version="1"/>
-                <EntitySet Name="SupportingPersons" EntityType="cds_xpacgxecm_activity.SupportingPersonsType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ActivityAddress" EntityType="cds_xpacgxecm_activity.ActivityAddressType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ActivityRemarks" EntityType="cds_xpacgxecm_activity.ActivityRemarksType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="ActivityAttachments" EntityType="cds_xpacgxecm_activity.ActivityAttachmentsType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ActivityInternalRemarks" EntityType="cds_xpacgxecm_activity.ActivityInternalRemarksType" sap:content-version="1"/>
                 <EntitySet Name="ActivityRelated" EntityType="cds_xpacgxecm_activity.ActivityRelatedType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="SupportingTechnicians" EntityType="cds_xpacgxecm_activity.SupportingTechniciansType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="FsmTeam" EntityType="cds_xpacgxecm_activity.FsmTeamType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ContactPerson" EntityType="cds_xpacgxecm_activity.ContactPersonType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="Customer" EntityType="cds_xpacgxecm_activity.CustomerType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="WorkCenterText" EntityType="cds_xpacgxecm_activity.WorkCenterTextType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="WorkforcePerson" EntityType="cds_xpacgxecm_activity.WorkforcePersonType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <AssociationSet Name="assoc_293813CEEA0EA13109DE9CEE51769072" Association="cds_xpacgxecm_activity.assoc_293813CEEA0EA13109DE9CEE51769072" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="Activity" Role="FromRole_assoc_293813CEEA0EA13109DE9CEE51769072"/>
                     <End EntitySet="ActivityRelated" Role="ToRole_assoc_293813CEEA0EA13109DE9CEE51769072"/>
                 </AssociationSet>
-                <AssociationSet Name="assoc_32326D3FD603F38D95737E43989E7ACF" Association="cds_xpacgxecm_activity.assoc_32326D3FD603F38D95737E43989E7ACF" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
-                    <End EntitySet="SupportingPersons" Role="FromRole_assoc_32326D3FD603F38D95737E43989E7ACF"/>
-                    <End EntitySet="Activity" Role="ToRole_assoc_32326D3FD603F38D95737E43989E7ACF"/>
+                <AssociationSet Name="assoc_AC053D70F777B345A97D1B9BFBF6E39F" Association="cds_xpacgxecm_activity.assoc_AC053D70F777B345A97D1B9BFBF6E39F" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Activity" Role="FromRole_assoc_AC053D70F777B345A97D1B9BFBF6E39F"/>
+                    <End EntitySet="ActivityAddress" Role="ToRole_assoc_AC053D70F777B345A97D1B9BFBF6E39F"/>
                 </AssociationSet>
-                <AssociationSet Name="assoc_169819CDD3A5296E0620CA0039AA51DB" Association="cds_xpacgxecm_activity.assoc_169819CDD3A5296E0620CA0039AA51DB" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
-                    <End EntitySet="Activity" Role="FromRole_assoc_169819CDD3A5296E0620CA0039AA51DB"/>
-                    <End EntitySet="SupportingPersons" Role="ToRole_assoc_169819CDD3A5296E0620CA0039AA51DB"/>
+                <AssociationSet Name="assoc_B552ECCCE2B1D563DBFED15E985C74FB" Association="cds_xpacgxecm_activity.assoc_B552ECCCE2B1D563DBFED15E985C74FB" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Activity" Role="FromRole_assoc_B552ECCCE2B1D563DBFED15E985C74FB"/>
+                    <End EntitySet="SupportingTechnicians" Role="ToRole_assoc_B552ECCCE2B1D563DBFED15E985C74FB"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_ADD7936CD25C45F22B8F5402A1BD3EED" Association="cds_xpacgxecm_activity.assoc_ADD7936CD25C45F22B8F5402A1BD3EED" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SupportingTechnicians" Role="FromRole_assoc_ADD7936CD25C45F22B8F5402A1BD3EED"/>
+                    <End EntitySet="WorkforcePerson" Role="ToRole_assoc_ADD7936CD25C45F22B8F5402A1BD3EED"/>
                 </AssociationSet>
                 <AssociationSet Name="assoc_BFCD2493875047A315659A95E3EED44E" Association="cds_xpacgxecm_activity.assoc_BFCD2493875047A315659A95E3EED44E" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="Activity" Role="FromRole_assoc_BFCD2493875047A315659A95E3EED44E"/>
                     <End EntitySet="ActivityAttachments" Role="ToRole_assoc_BFCD2493875047A315659A95E3EED44E"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_7977C698821E8619A3B2CA0EB634B467" Association="cds_xpacgxecm_activity.assoc_7977C698821E8619A3B2CA0EB634B467" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ContactPerson" Role="FromRole_assoc_7977C698821E8619A3B2CA0EB634B467"/>
+                    <End EntitySet="Customer" Role="ToRole_assoc_7977C698821E8619A3B2CA0EB634B467"/>
                 </AssociationSet>
             </EntityContainer>
             <Annotations Target="cds_xpacgxecm_activity.cds_xpacgxecm_activity_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
@@ -264,6 +449,15 @@
                                 <PropertyPath>ServiceRatingVirtual</PropertyPath>
                                 <PropertyPath>FSMCompanyName</PropertyPath>
                                 <PropertyPath>ActivityStatusAdjusted</PropertyPath>
+                                <PropertyPath>Remarks</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Remarks"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
                             </Collection>
                         </PropertyValue>
                     </Record>
@@ -275,6 +469,8 @@
                                 <PropertyPath>ServiceRatingVirtual</PropertyPath>
                                 <PropertyPath>FSMCompanyName</PropertyPath>
                                 <PropertyPath>ActivityStatusAdjusted</PropertyPath>
+                                <PropertyPath>Remarks</PropertyPath>
+                                <PropertyPath>Remarks</PropertyPath>
                             </Collection>
                         </PropertyValue>
                     </Record>
@@ -303,7 +499,30 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            <Annotations Target="cds_xpacgxecm_activity.cds_xpacgxecm_activity_Entities/SupportingPersons" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_xpacgxecm_activity.cds_xpacgxecm_activity_Entities/ActivityRemarks" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Remarks"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Remarks</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_xpacgxecm_activity.cds_xpacgxecm_activity_Entities/SupportingTechnicians" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.FilterRestrictions">
                     <Record>
                         <PropertyValue Property="NonFilterableProperties">
